@@ -1,0 +1,30 @@
+html {
+  font-size: 24px;
+}
+
+.height {
+  height: 100px;
+}
+
+.vw {
+  background-color: red;
+  width: 50vw;
+}
+
+.procent {
+  width: 50%;
+ background-color: blue;
+}
+
+.px {
+  background-color: green;
+  width: 500px;
+}
+
+.font {
+  font-size: 40px;
+
+  p:last-child {
+    font-size: 0.5em;
+  }
+}
