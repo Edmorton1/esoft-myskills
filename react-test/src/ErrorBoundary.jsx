@@ -21,7 +21,7 @@ export class ErrorBoundary extends Component {
       return <>
         <div>ОШИБКА</div>
         <div>{errorInfo.componentStack}</div>
-        <button onClick={() => window.location.reload()}>Перезагрузить страницу</button>
+        <button onClick={() => this.setState({errorInfo: null})}>Перерендерить страницу</button>
       </>
     }
 
