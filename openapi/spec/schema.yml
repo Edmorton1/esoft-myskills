@@ -1,0 +1,97 @@
+openapi: 3.1.0
+info:
+  title: Test Service
+  description: Test Service Description
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+    description: Получение тестовых данных
+paths:
+  /users:
+    get:
+      summary: Адрес на users
+      description: Выдаёт тестовых users
+      tags:
+        - users
+      parameters:
+        - name: id
+          in: query
+          schema:
+            $ref: '#/components/schemas/id'
+      responses:
+        200:
+          description: Юзер
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+    post:
+      tags:
+        - users
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/userDTO'
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+
+components:
+  schemas:
+    user:
+      type: object
+      required:
+        - id
+        - name
+        - email
+        - password
+      properties:
+        id:
+          $ref: '#/components/schemas/id'
+        name:
+          type: string
+        email:
+          $ref: '#/components/schemas/email'
+        password:
+          $ref: '#/components/schemas/password'
+      example:
+        id: 1
+        name: "vasyok"
+        email: "q@w.er"
+        password: "123123"
+
+    userDTO:
+      type: object
+      required:
+        - name
+        - email
+        - password
+      properties:
+        name:
+          type: string
+        email:
+          $ref: '#/components/schemas/email'
+        password:
+          $ref: '#/components/schemas/password'
+      example:
+        name: "vasyok"
+        email: "q@w.er"
+        password: "123123"
+
+    id:
+      type: integer
+      minimum: 0
+
+    email:
+      type: string
+      format: email
+
+    password:
+      type: string
+      minLength: 6
