@@ -7,15 +7,16 @@ servers:
   - url: http://localhost:3000
     description: Получение тестовых данных
 paths:
-  /users:
+  /users/{id}:
     get:
-      summary: Адрес на users
-      description: Выдаёт тестовых users
+      summary: Адрес на конкретного пользователя
+      description: Выдаёт тестового пользователя
       tags:
         - users
       parameters:
         - name: id
-          in: query
+          in: path
+          required: true
           schema:
             $ref: '#/components/schemas/id'
       responses:
@@ -25,6 +26,19 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/user'
+  /users:
+    get:
+      tags:
+        - users
+      responses:
+        200:
+          description: Юзеры
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/user'
     post:
       tags:
         - users

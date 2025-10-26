@@ -28,9 +28,13 @@ app.use(OpenApiValidator.middleware({
   validateResponses: true,
 }))
 
-app.get('/users', (req, res) => {
+app.get('/users/', (req, res) => {
+  res.json([{id: 1, name: 'vasya', email: 'q@w.er', password: '123456'}, {id: 2, name: 'petya', email: 'test@example.com', password: '123456'}])
+})
+
+app.get('/users/:id', (req, res) => {
   console.log('get users');
-  const {id} = req.query
+  const {id} = req.params
   console.log(id)
   res.json({ id, name: 'vasya', email: 'q@w.er', password: '123456' });
 });

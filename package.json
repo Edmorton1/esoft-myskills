@@ -17,8 +17,5 @@
   "bugs": {
     "url": "https://github.com/Edmorton1/esoft-myskills/issues"
   },
-  "homepage": "https://github.com/Edmorton1/esoft-myskills#readme",
-  "dependencies": {
-    "express": "^5.1.0"
-  }
+  "homepage": "https://github.com/Edmorton1/esoft-myskills#readme"
 }

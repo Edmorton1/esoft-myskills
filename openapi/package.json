@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon ./server/index.js",
+    "refreshSDK": "rm -rf mysdk && openapi-generator-cli generate -i ./spec/schema.yml -g javascript -o ./mysdk && cd ./mysdk && npm install && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,9 +13,11 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "@openapitools/openapi-generator-cli": "^2.25.0",
     "express": "^5.1.0",
     "express-openapi-validator": "^5.6.0",
     "nodemon": "^3.1.10",
+    "superagent": "^10.2.3",
     "swagger-ui-express": "^5.0.1",
     "yaml": "^2.8.1"
   }

@@ -1,0 +1,15 @@
+.babelrc
+.gitignore
+.travis.yml
+README.md
+docs/User.md
+docs/UserDTO.md
+docs/UsersApi.md
+git_push.sh
+mocha.opts
+package.json
+src/ApiClient.js
+src/api/UsersApi.js
+src/index.js
+src/model/User.js
+src/model/UserDTO.js
