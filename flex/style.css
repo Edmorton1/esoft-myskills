@@ -1,0 +1,26 @@
+main {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap-reverse;
+  justify-content: space-evenly;
+
+  div {
+    width: 300px;
+    height: 300px;
+  }
+
+  div:first-child {
+    flex-basis: 25%;
+    background-color: red;
+  }
+
+  div:nth-child(2) {
+    flex-shrink: 0;
+    order: 1;
+    background-color: green;
+  }
+
+  div:last-child {
+    background-color: blue;
+  }
+}
